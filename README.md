@@ -13,7 +13,7 @@ Desenvolvida com **React + TypeScript + Redux Toolkit + Vite**.
 - 📖 **Detalhes** do filme (nota, sinopse, gêneros, duração)  
 - ⭐ **Favoritos** com persistência em `localStorage`  
 - ⏳ **Skeletons** de carregamento e estados de vazio/erro  
-- ♿ **Acessibilidade básica**: foco visível, aria-labels, skip link  
+- ♿ **Acessibilidade básica** (foco visível, aria-labels, skip link)  
 - ✅ **Testes unitários** com Vitest + Testing Library  
 
 ---
