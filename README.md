@@ -46,6 +46,10 @@ npm test
 ## 📸 Screenshots
 
 <p align="center">
+  <img src="./public/og-image.png" alt="MovieFinder — Descubra e favorite filmes" width="900" />
+</p>
+
+<p align="center">
   <img src="./public/home_preview.png" alt="Home" width="300"/>
   <img src="./public/details_preview.png" alt="Detalhes" width="300"/>
   <img src="./public/favorites_preview.png" alt="Favoritos" width="300"/>
