@@ -1,22 +1,19 @@
 # 🎬 MovieFinder
 
 Aplicação web para descobrir, buscar e favoritar filmes.  
-Desenvolvida com **React + TypeScript + Redux Toolkit + Vite**.
+Feita com **React + TypeScript + Redux Toolkit + Vite**.
 
-<p align="center">
-  <img src="./src/assets/og-image.png" alt="MovieFinder — Descubra e favorite filmes" width="900" />
-</p>
+🔗 **Demo online**: [MovieFinder na Vercel](https://movie-finder-7lfo.vercel.app/)
 
 ---
 
 ## ✨ Funcionalidades
-- 🔍 **Busca** de filmes com debounce e paginação  
-- 🎭 **Filtro por gênero**  
-- 📖 **Detalhes** do filme (nota, sinopse, gêneros, duração)  
-- ⭐ **Favoritos** com persistência em `localStorage`  
-- ⏳ **Skeletons** de carregamento e estados de vazio/erro  
-- ♿ **Acessibilidade básica** (foco visível, aria-labels, skip link)  
-- ✅ **Testes unitários** com Vitest + Testing Library  
+- 🔍 Busca de filmes com debounce e paginação  
+- 🎭 Filtro por gênero  
+- 📖 Detalhes do filme (nota, sinopse, gêneros, duração)  
+- ⭐ Favoritos com persistência em `localStorage`  
+- ⏳ Skeletons de carregamento e estados de vazio/erro  
+- ♿ Acessibilidade básica (foco visível, aria-labels, skip link)  
 
 ---
 
@@ -26,7 +23,6 @@ Desenvolvida com **React + TypeScript + Redux Toolkit + Vite**.
 - [Redux Toolkit](https://redux-toolkit.js.org/)  
 - [React Router](https://reactrouter.com/)  
 - [Vite](https://vitejs.dev/)  
-- [Vitest](https://vitest.dev/) + [Testing Library](https://testing-library.com/)  
 
 ---
 
@@ -41,6 +37,3 @@ echo "VITE_TMDB_API_KEY=SUA_CHAVE_TMDB" > .env
 
 # 3. Rodar em modo dev
 npm run dev
-
-# 4. Rodar testes
-npm test
