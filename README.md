@@ -45,12 +45,8 @@ npm test
 
 ## 📸 Screenshots
 
-### Home
-![Home](./src/assets/home_preview.png)
-
-### Detalhes
-![Detalhes](./src/assets/details_preview.png)
-
-### Favoritos
-![Favoritos](./src/assets/favorites_preview.png)
-
+<p align="center">
+  <img src="./public/home_preview.png" alt="Home" width="300"/>
+  <img src="./public/details_preview.png" alt="Detalhes" width="300"/>
+  <img src="./public/favorites_preview.png" alt="Favoritos" width="300"/>
+</p>
