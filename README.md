@@ -4,7 +4,7 @@ Aplicação web para descobrir, buscar e favoritar filmes.
 Desenvolvida com **React + TypeScript + Redux Toolkit + Vite**.
 
 <p align="center">
-  <img src="./public/og-image.png" alt="MovieFinder — Descubra e favorite filmes" width="900" />
+  <img src="./src/assets/og-image.png" alt="MovieFinder — Descubra e favorite filmes" width="900" />
 </p>
 
 ---
