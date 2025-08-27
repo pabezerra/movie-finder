@@ -3,7 +3,7 @@
 Aplicação web para descobrir, buscar e favoritar filmes.  
 Desenvolvida com **React + TypeScript + Redux Toolkit + Vite**.
 
-![Preview](./public/og-image.png)
+![Preview](./src/assets/home_preview.png)
 
 ---
 
@@ -42,3 +42,15 @@ npm run dev
 
 # 4. Rodar testes
 npm test
+
+## 📸 Screenshots
+
+### Home
+![Home](./src/assets/home_preview.png)
+
+### Detalhes
+![Detalhes](./src/assets/details_preview.png)
+
+### Favoritos
+![Favoritos](./src/assets/favorites_preview.png)
+
