@@ -1,0 +1,246 @@
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body { 
+  margin: 0; 
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial; 
+  background:#0b0f14; 
+  color:#e8eef4; 
+}
+
+/* ====== LAYOUT BASE ====== */
+.container { width: min(1100px, 92%); margin: 0 auto; }
+
+/* Header com blur e nav mais caprichado */
+header { 
+  position: sticky; 
+  top: 0; 
+  background: color-mix(in oklab, #0b0f14 90%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #132235; 
+  z-index: 20; 
+}
+header .inner { display:flex; gap:16px; align-items:center; justify-content:space-between; padding: 16px 0; }
+.brand { font-weight: 800; letter-spacing:.2px; color:#81b0ff; text-decoration:none; }
+nav a { color:#cfe1ff; text-decoration:none; margin: 0 10px; opacity:.86; }
+nav a.active, nav a:hover { opacity:1; text-decoration: underline; text-underline-offset: 3px; }
+
+/* ====== GRID DE CARDS ====== */
+.grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px,1fr));
+  gap: 18px;
+}
+
+/* ====== CARD ====== */
+.card { 
+  background:#0f1621; 
+  border:1px solid #1b2a3b; 
+  border-radius: 14px; 
+  overflow: hidden; 
+  box-shadow: 0 6px 18px #00000033; 
+  display: flex; 
+  flex-direction: column;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+/* Hover elegante */
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px #00000055;
+  border-color: #254364;
+}
+
+.card img { 
+  width: 100%; 
+  display:block; 
+  aspect-ratio: 2/3; 
+  object-fit: cover; 
+  background:#0b0f14; 
+  transform: translateZ(0);
+  transition: transform .25s ease;
+}
+.card:hover img { transform: scale(1.02); }
+
+.card .body { 
+  flex: 1; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between; /* título/meta em cima, botão embaixo */
+  padding: 12px 14px 16px; 
+}
+
+/* título do card – até 2 linhas com reticências */
+.title { 
+  font-size: 16px; 
+  font-weight:650; 
+  line-height:1.35; 
+  color:#eaf2ff; 
+  margin: 6px 0 6px;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;   /* máximo 2 linhas */
+  line-clamp: 2;           /* versão padrão */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* meta do card – 1 linha com reticências */
+.meta { 
+  font-size: 12px; 
+  color:#9bb4cc; 
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 10px; /* respiro antes do botão */
+}
+
+/* Botões com estados e foco acessível */
+.btn { 
+  --btn-bg: #1a64ff;
+  --btn-bg-hover: #3b7aff;
+  --btn-bg-active: #0f54f8;
+  --btn-ring: #2a6bff88;
+
+  background: var(--btn-bg); 
+  color:#fff; 
+  border:none; 
+  padding:10px 14px; 
+  border-radius:10px; 
+  cursor:pointer; 
+  font-weight:700; 
+  text-align:center;
+  transition: background .15s ease, transform .06s ease, box-shadow .15s ease;
+}
+.btn:hover { background: var(--btn-bg-hover); }
+.btn:active { background: var(--btn-bg-active); transform: translateY(1px); }
+.btn:focus-visible { outline: none; box-shadow: 0 0 0 3px var(--btn-ring); }
+.btn:disabled { opacity:.6; cursor:not-allowed; }
+
+/* ====== CONTROLS (busca/filtros) ====== */
+.controls { display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin:16px 0 12px; }
+.input { background:#0f1621; border:1px solid #1d2a3a; color:#eaf2ff; padding:10px 12px; border-radius:10px; min-width: 220px; }
+.select { background:#0f1621; border:1px solid #1d2a3a; color:#eaf2ff; padding:10px 12px; border-radius:10px; }
+.helper { color:#8aa5c4; font-size: 13px; margin: 10px 0 4px; }
+
+/* ====== PAGINATION ====== */
+.pagination { display:flex; gap:8px; align-items:center; justify-content:center; margin: 20px 0 36px; }
+.pageBtn { background:#0f1621; color:#cfe1ff; border:1px solid #1b2a3b; padding:8px 12px; border-radius:10px; cursor:pointer; }
+.pageBtn.active, .pageBtn:hover { background:#163152; }
+
+/* ====== SKELETON ====== */
+.skeleton { background: linear-gradient(90deg,#0e1824,#122033,#0e1824); background-size: 200% 100%; animation: pulse 1.2s infinite; border-radius:12px; }
+@keyframes pulse { 0% { background-position: 0% 0;} 100%{ background-position: -200% 0;} }
+.skeleton.poster { aspect-ratio: 2/3; }
+.skeleton.line { height: 12px; margin: 10px 0; }
+
+/* ====== DETALHES DO FILME ====== */
+.detail {
+  display: grid;
+  grid-template-columns: 280px 1fr; /* poster um pouco maior */
+  gap: 26px;
+  align-items: start;              
+  margin: 22px 0 44px;
+}
+.detail img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+  border: 1px solid #1b2a3b;
+  box-shadow: 0 8px 28px #00000055;
+}
+.detail h1 { 
+  margin: 0 0 8px; 
+  font-size: clamp(24px, 3.2vw, 34px); 
+  letter-spacing: .2px;
+}
+
+/* badges de gêneros */
+.badge {
+  display:inline-block;
+  background:#163152;
+  color:#cfe1ff;
+  border:1px solid #1b2a3b;
+  padding:4px 8px;
+  border-radius:999px;
+  margin: 4px 6px 0 0;
+  font-size: 12px;
+}
+
+/* ====== RESPONSIVO ====== */
+@media (max-width: 800px) {
+  .detail { grid-template-columns: 1fr; }
+  .detail img { width: min(420px, 100%); justify-self: start; }
+}
+
+@media (max-width: 360px) {
+  .grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px; }
+  .card .body { padding: 10px 12px 14px; }
+  .title { font-size: 15px; }
+}
+
+/* card precisa ser relativo para o botão sobre a imagem */
+.card { position: relative; }
+
+/* botão redondo no canto superior direito do poster */
+.iconBtn {
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  color: #fff;
+  background: #1f2a38cc;
+  backdrop-filter: blur(2px);
+  transition: transform .12s ease, background .12s ease, box-shadow .12s ease;
+}
+.iconBtn:active { transform: translateY(1px); }
+.iconBtn:focus-visible { outline: none; box-shadow: 0 0 0 3px #2a6bff88; }
+
+.favToggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* variação “danger” para comunicar remover */
+.iconBtn.danger:hover { background: #ff3b5f; }
+.iconBtn.danger:active { background: #e52a4c; }
+
+/* botão secundário estilo contornado (remover na área do body) */
+.btn.btn-outline-danger {
+  background: transparent;
+  color: #ff5274;
+  border: 1px solid #3a1f2a;
+}
+.btn.btn-outline-danger:hover {
+  background: #3a1f2a;
+  color: #ff6b87;
+}
+.btn.btn-outline-danger:active {
+  background: #2e1822;
+}
+
+.pageBtn { 
+  background:#0f1621; color:#cfe1ff; border:1px solid #1b2a3b; 
+  padding:10px 14px; border-radius:10px; cursor:pointer;
+  min-height: 40px; min-width: 44px; /* bom para toque */
+  transition: background .15s ease, box-shadow .15s ease;
+}
+.pageBtn:focus-visible { outline: none; box-shadow: 0 0 0 3px #2a6bff88; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+.sr-only-focusable {
+  position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden;
+}
+.sr-only-focusable:focus {
+  position: static; width: auto; height: auto; padding: 8px 12px;
+  background: #163152; color: #fff; border-radius: 8px;
+}
+
+
